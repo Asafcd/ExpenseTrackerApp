@@ -6,38 +6,33 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
+
+    @StateObject private var loginViewModel = LoginViewModel()
+    
     var body: some View {
         NavigationView {
-            ScrollView{
-                VStack(alignment: .leading, spacing: 24){
-                    Text("Overview")
-                        .font(.title)
-                        .bold()
-                }
-                .padding()
-                .frame(maxWidth: .infinity)
-            }
-            .background(Color.background)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem{
-                    Image(systemName: "bell.badge")
-                        .symbolRenderingMode(.palette)
-                        .foregroundStyle(Color.icon, .primary)
-                }
-            }
+            LoginView()
         }
-        .navigationViewStyle(.stack)
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transactionListPreviewData
+        return transactionListVM
+    }()
+    
     static var previews: some View {
         Group{
             ContentView()
             ContentView()
+                .preferredColorScheme(.dark)
         }
+        .environmentObject(transactionListVM)
     }
 }

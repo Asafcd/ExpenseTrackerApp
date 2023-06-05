@@ -12,6 +12,7 @@
 		D315B6F22A28F1F700F965F6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315B6F12A28F1F700F965F6 /* LoginView.swift */; };
 		D315B6F42A2BDE2F00F965F6 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315B6F32A2BDE2F00F965F6 /* NotificationModel.swift */; };
 		D315B6F82A2BDECC00F965F6 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D315B6F72A2BDECC00F965F6 /* NotificationViewModel.swift */; };
+		D3290F4D2A2E5947003B422A /* GroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3290F4C2A2E5947003B422A /* GroupView.swift */; };
 		D3629CAD2A09C0180047723F /* ExpenseTrackerAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3629CAC2A09C0180047723F /* ExpenseTrackerAppApp.swift */; };
 		D3629CAF2A09C0180047723F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3629CAE2A09C0180047723F /* ContentView.swift */; };
 		D3629CB12A09C0190047723F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3629CB02A09C0190047723F /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		D315B6F12A28F1F700F965F6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D315B6F32A2BDE2F00F965F6 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		D315B6F72A2BDECC00F965F6 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
+		D3290F4C2A2E5947003B422A /* GroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupView.swift; sourceTree = "<group>"; };
 		D3629CA92A09C0180047723F /* ExpenseTrackerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExpenseTrackerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3629CAC2A09C0180047723F /* ExpenseTrackerAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTrackerAppApp.swift; sourceTree = "<group>"; };
 		D3629CAE2A09C0180047723F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		D3629CA02A09C0180047723F = {
 			isa = PBXGroup;
 			children = (
+				D3290F4C2A2E5947003B422A /* GroupView.swift */,
 				D3629CAB2A09C0180047723F /* ExpenseTrackerApp */,
 				D3629CBD2A09C0190047723F /* ExpenseTrackerAppTests */,
 				D3629CC72A09C0190047723F /* ExpenseTrackerAppUITests */,
@@ -330,6 +333,7 @@
 			files = (
 				D3629CDC2A0AC4D50047723F /* PreviewData.swift in Sources */,
 				D3D48C242A1420F40047C8B4 /* TransactionList.swift in Sources */,
+				D3290F4D2A2E5947003B422A /* GroupView.swift in Sources */,
 				D3D48C2C2A15CA960047C8B4 /* ProfileView.swift in Sources */,
 				D315B6F82A2BDECC00F965F6 /* NotificationViewModel.swift in Sources */,
 				D315B6F22A28F1F700F965F6 /* LoginView.swift in Sources */,

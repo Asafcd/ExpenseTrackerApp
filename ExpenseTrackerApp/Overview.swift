@@ -9,8 +9,52 @@ import SwiftUI
 import SwiftUICharts
 
 struct Overview: View {
-    @EnvironmentObject var transactionsListVM: TransactionListViewModel
+    
+    @State private var selectedTab = 0
     var body: some View {
+        TabView(selection: $selectedTab){
+
+            OverviewContent()
+                .tabItem{
+                    Text("Overview")
+                    Image(systemName: "house")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.icon, .primary)
+                }
+            
+            GroupView()
+                .tabItem{
+                    Text("Group")
+                    Image(systemName: "rectangle.3.group")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(Color.icon, .primary)
+                }
+        }.tabViewStyle(.automatic)
+        
+    }
+}
+
+struct Overview_Previews: PreviewProvider {
+    static let transactionListVM: TransactionListViewModel = {
+        let transactionListVM = TransactionListViewModel()
+        transactionListVM.transactions = transactionListPreviewData
+        return transactionListVM
+    }()
+    
+    static var previews: some View {
+        Group{
+            Overview()
+            Overview()
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(transactionListVM)
+    }
+}
+
+struct OverviewContent: View{
+    @EnvironmentObject var transactionsListVM: TransactionListViewModel
+    
+    var body: some View{
         NavigationView {
             
             ScrollView{
@@ -45,16 +89,14 @@ struct Overview: View {
             .background(Color.background)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
-                
                 ToolbarItem(placement: .cancellationAction){
                     NavigationLink{
                         ProfileView()
                     } label: {
                         Image(systemName: "person")
                             .symbolRenderingMode(.palette)
-                            .foregroundStyle(Color.primary, .primary)
+                            .foregroundStyle(Color.icon, .primary)
                     }
-                    
                 }
                 
                 ToolbarItem{
@@ -70,21 +112,5 @@ struct Overview: View {
         }
         .navigationBarBackButtonHidden(true)
     }
-}
-
-struct Overview_Previews: PreviewProvider {
-    static let transactionListVM: TransactionListViewModel = {
-        let transactionListVM = TransactionListViewModel()
-        transactionListVM.transactions = transactionListPreviewData
-        return transactionListVM
-    }()
     
-    static var previews: some View {
-        Group{
-            Overview()
-            Overview()
-                .preferredColorScheme(.dark)
-        }
-        .environmentObject(transactionListVM)
-    }
 }
